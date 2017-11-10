@@ -13,6 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Events resource.
+Route::resource('events', 'EventController');
+
+// Upload file to reservation.
+Route::post('reservations/uploadFile', 'ReservationController@uploadFile');
+// Reservations resource.
+Route::resource('reservations', 'ReservationController');
