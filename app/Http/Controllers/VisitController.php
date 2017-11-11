@@ -38,6 +38,12 @@ class VisitController extends Controller
         //
     }
 
+    /**
+     * Store an event visits resources in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
     public function storeEvent(Request $request) {
 
         // Validate data
@@ -89,7 +95,7 @@ class VisitController extends Controller
      */
     public function show($id)
     {
-        //
+        return Visit::find($id);
     }
 
     /**
