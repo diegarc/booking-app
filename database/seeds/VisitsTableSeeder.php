@@ -16,8 +16,8 @@ class VisitsTableSeeder extends Seeder
             'males' => 43,
             'females' => 48,
             'under18' => 6,
-            '18-30' => 53,
-            '30-50' => 21,
+            'between1830' => 53,
+            'between3150' => 21,
             'over50' => 12,
             'reservation_id' => 1
         ]);

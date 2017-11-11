@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class ReservationController extends Controller
 {
     /**
+     * Display an event reservations.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function byEventId($eventId)
+    {
+        return Reservation::byEventId($eventId)->get();
+    }
+
+    /**
      * Store a newly created reservation in storage.
      *
      * @param  \Illuminate\Http\Request  $request

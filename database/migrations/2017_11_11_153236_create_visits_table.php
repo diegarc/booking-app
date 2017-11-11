@@ -19,8 +19,8 @@ class CreateVisitsTable extends Migration
             $table->integer('males');
             $table->integer('females');
             $table->integer('under18');
-            $table->integer('18-30');
-            $table->integer('30-50');
+            $table->integer('between1830');
+            $table->integer('between3150');
             $table->integer('over50');
             $table->integer('reservation_id')->unsigned();
             $table->timestamps();
