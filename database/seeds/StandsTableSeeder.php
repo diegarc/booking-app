@@ -15,10 +15,10 @@ class StandsTableSeeder extends Seeder
             'dimensions' => '2m x 4m',
             'cost' => 3000,
             'img' => 'public/stand-photos/stand-02.jpg',
-            'top' => 338,
-            'left' => 210,
-            'width' => 68,
-            'height' => 90,
+            'top' => 370,
+            'left' => 155,
+            'width' => 160,
+            'height' => 170,
             'event_id' => 1,
         ]);
 
@@ -26,10 +26,10 @@ class StandsTableSeeder extends Seeder
             'dimensions' => '2m x 4m',
             'cost' => 1800,
             'img' => 'public/stand-photos/stand-03.jpg',
-            'top' => 338,
-            'left' => 281,
-            'width' => 65,
-            'height' => 90,
+            'top' => 400,
+            'left' => 320,
+            'width' => 115,
+            'height' => 135,
             'event_id' => 1,
         ]);
 
@@ -37,10 +37,10 @@ class StandsTableSeeder extends Seeder
             'dimensions' => '4m x 2m',
             'cost' => 2500,
             'img' => 'public/stand-photos/stand-01.jpg',
-            'top' => 338,
-            'left' => 503,
-            'width' => 65,
-            'height' => 90,
+            'top' => 407,
+            'left' => 440,
+            'width' => 100,
+            'height' => 93,
             'event_id' => 1,
         ]);
 
@@ -48,10 +48,10 @@ class StandsTableSeeder extends Seeder
             'dimensions' => '4m x 2m',
             'cost' => 2500,
             'img' => 'public/stand-photos/stand-01.jpg',
-            'top' => 338,
-            'left' => 571,
-            'width' => 65,
-            'height' => 90,
+            'top' => 407,
+            'left' => 545,
+            'width' => 85,
+            'height' => 93,
             'event_id' => 1,
         ]);
 
@@ -59,10 +59,10 @@ class StandsTableSeeder extends Seeder
             'dimensions' => '4m x 2m',
             'cost' => 2500,
             'img' => 'public/stand-photos/stand-01.jpg',
-            'top' => 272,
-            'left' => 312,
-            'width' => 68,
-            'height' => 123,
+            'top' => 446,
+            'left' => 208,
+            'width' => 296,
+            'height' => 261,
             'event_id' => 2,
         ]);
 
@@ -70,10 +70,10 @@ class StandsTableSeeder extends Seeder
             'dimensions' => '2m x 4m',
             'cost' => 3000,
             'img' => 'public/stand-photos/stand-02.jpg',
-            'top' => 272,
-            'left' => 382,
-            'width' => 72,
-            'height' => 123,
+            'top' => 710,
+            'left' => 208,
+            'width' => 296,
+            'height' => 154,
             'event_id' => 2,
         ]);
 
@@ -81,10 +81,10 @@ class StandsTableSeeder extends Seeder
             'dimensions' => '2m x 4m',
             'cost' => 1800,
             'img' => 'public/stand-photos/stand-03.jpg',
-            'top' => 272,
-            'left' => 456,
-            'width' => 72,
-            'height' => 123,
+            'top' => 871,
+            'left' => 206,
+            'width' => 263,
+            'height' => 130,
             'event_id' => 2,
         ]);
     }

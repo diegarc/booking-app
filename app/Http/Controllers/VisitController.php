@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\EventReport;
 use App\Models\Visit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class VisitController extends Controller
 {
@@ -38,12 +40,6 @@ class VisitController extends Controller
         //
     }
 
-    /**
-     * Store an event visits resources in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
     public function storeEvent(Request $request) {
 
         // Validate data
@@ -58,8 +54,9 @@ class VisitController extends Controller
             'reservations.*.visits.reservation_id' => 'required|integer'
         ]);
 
-        $reservations = $request->reservations;
-        foreach ($reservations as &$reservation) {
+
+
+        foreach ($request->reservations as $reservation) {
 
             if (isset($reservation['visits']['id'])) {
                 $visit = Visit::find($reservation['visits']['id']);
@@ -80,11 +77,12 @@ class VisitController extends Controller
             // Save visit to db.
             $visit->save();
 
-            $reservation['visits']['id'] = $visit->id;
+            // Sending report mail.
+            Mail::to($reservation['admin'])->send(new EventReport($visit));
         }
 
         // Return saved visits.
-        return $reservations;
+        return $request->reservations;
     }
 
     /**

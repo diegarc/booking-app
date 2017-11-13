@@ -12,13 +12,13 @@ class ReservationsTableSeeder extends Seeder
     public function run()
     {
         DB::table('reservations')->insert([
-            'company' => str_random(10),
-            'admin' => str_random(20),
-            'address' => str_random(25),
-            'phone' => str_random(10),
+            'company' => 'Cross|Over',
+            'admin' => 'diegarc@gmail.com',
+            'address' => '3905 G Street',
+            'phone' => '573208004999',
             'logo_img' => 'public/company-logos/stand-logo-01.png',
             'marketing_docs' => 'public/marketing-docs/marketing_docs.zip',
-            'stand_id' => 3,
+            'stand_id' => 3
         ]);
     }
 }
