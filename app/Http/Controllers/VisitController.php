@@ -10,26 +10,6 @@ use Illuminate\Support\Facades\Mail;
 class VisitController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -40,6 +20,12 @@ class VisitController extends Controller
         //
     }
 
+    /**
+     * Store an event visits resources in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
     public function storeEvent(Request $request) {
 
         // Validate data
@@ -54,17 +40,17 @@ class VisitController extends Controller
             'reservations.*.visits.reservation_id' => 'required|integer'
         ]);
 
-
-
+        // For each reservation...
         foreach ($request->reservations as $reservation) {
 
+            // If visits exists, get the resource or create a new one.
             if (isset($reservation['visits']['id'])) {
                 $visit = Visit::find($reservation['visits']['id']);
             } else {
                 $visit = new Visit();
             }
 
-            // Load visit data.
+            // Load visits data.
             $visit->users = $reservation['visits']['users'];
             $visit->males = $reservation['visits']['males'];
             $visit->females = $reservation['visits']['females'];
@@ -94,39 +80,5 @@ class VisitController extends Controller
     public function show($id)
     {
         return Visit::find($id);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }
